@@ -8,6 +8,8 @@ import { EstructurasComponent } from './estructuras/estructuras.component';
 import { DocumentacionComponent } from './documentacion/documentacion.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
+// importamos SharedModule
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    SharedModule,
   ]
 })
 export class PagesModule { }
