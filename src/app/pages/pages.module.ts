@@ -25,4 +25,6 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule,
   ]
 })
-export class PagesModule { }
+export class PagesModule {
+
+}

@@ -1,5 +1,46 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-  <p>estructuras works!</p>
+  <h1>ngIf, ngFor y ngSwitch</h1>
+  <p class="lead">A continuación se presentan ejemplos visuales de las estructuras de control ngIf, ngFor y ngSwitch</p>
+
+  <h2>ngIf</h2>
+  <p>El siguiente botón alterna la visibilidad de una alerta utilizando <code>*ngIf</code>:</p>
+  <button class="btn btn-primary" (click)="toggleAlert()">
+    {{ mostrar ? 'Ocultar' : 'Mostrar' }} alerta
+  </button>
+
+  <div *ngIf="mostrar" class="alert alert-success mt-3">
+    Este es un mensaje de alerta activo
+  </div>
+
+  <h2 class="mt-5">ngFor</h2>
+  <p>El siguiente ejemplo muestra una lista de usuarios utilizando <code>*ngFor</code></p>
+  <button class="btn btn-secondary mb-3" (click)="cambiarListado()">
+    Vaciar listado
+  </button>
+  <ul class="list-group">
+    <li *ngFor="let usuario of usuarios" class="list-group-item">
+      {{ usuario }}
+    </li>
+  </ul>
+
+  <h2 class="mt-5">ngSwitch</h2>
+  <p>El siguiente ejemplo muestra un mensaje basado en el valor de una variable utilizando <code>[ngSwitch]</code>:</p>
+  <button class="btn btn-info me-2" (click)="cambiarRol('admin')">Admin</button>
+  <button class="btn btn-warning me-2" (click)="cambiarRol('user')">User</button>
+  <button class="btn btn-secondary" (click)="cambiarRol('guest')">Guest</button>
+  <div class="mt-3" [ngSwitch]="rol">
+  <div *ngSwitchCase="'admin'" class="alert alert-info">
+    Bienvenido, administrador. Tienes acceso completo.
+  </div>
+  <div *ngSwitchCase="'user'" class="alert alert-warning">
+    Bienvenido, usuario. Tienes acceso limitado.
+  </div>
+  <div *ngSwitchCase="'guest'" class="alert alert-secondary">
+    Bienvenido, invitado. Por favor, inicia sesión.
+  </div>
+  <div *ngSwitchDefault class="alert alert-dark">
+    Rol desconocido.
+  </div> 
 </div>
